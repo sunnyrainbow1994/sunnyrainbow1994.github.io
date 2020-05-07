@@ -5,19 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://sunnyrainbow1994.github.io">
   <title>Archives | juan的碎碎念</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大龄直女一枚，喜欢爬山、旅游、手机摄影，准备入手相机">
+  <meta name="description" content="june，大龄直女一枚，喜欢爬山、旅游、手机摄影，准备入手相机。本博客用于记录测试工作总结。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="juan的碎碎念">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="https://sunnyrainbow1994.github.io/archives/index.html">
 <meta property="og:site_name" content="juan的碎碎念">
-<meta property="og:description" content="大龄直女一枚，喜欢爬山、旅游、手机摄影，准备入手相机">
+<meta property="og:description" content="june，大龄直女一枚，喜欢爬山、旅游、手机摄影，准备入手相机。本博客用于记录测试工作总结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="June">
-<meta property="article:tag" content="软件测试">
+<meta property="article:tag" content="软件测试、python、docker、selenium、appium等">
 <meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="juan的碎碎念" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -30,8 +32,31 @@
     }
   </style>
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97038102-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?076da1b6e2c3047b2e7d6ed3e54cb180";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -44,7 +69,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/my.jpg" class="js-avatar">
+			<img src="img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">June</a></h1>
@@ -60,7 +85,9 @@
 	        
 				<li><a href="/tags/suibi/">随笔</a></li>
 	        
-				<li><a href="/photos/my.jpg">相册</a></li>
+				<li><a href="/life/">生活</a></li>
+	        
+				<li><a href="/photos/">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -70,6 +97,8 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -83,6 +112,10 @@
 					<a class="github" target="_blank" href="https://github.com/sunnyrainbow1994" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:imwhyour@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -100,7 +133,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/my.jpg" class="js-avatar">
+				<img src="img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">June</h1>
@@ -109,6 +142,8 @@
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一生温暖纯良，不舍爱与自由<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -125,6 +160,10 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:imwhyour@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
 				</div>
 			</nav>
 
@@ -132,11 +171,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/suibi/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/suibi/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/photos/my.jpg">相册</a></li>
+					<li style="width: 25%"><a href="/life/">生活</a></li>
+		        
+					<li style="width: 25%"><a href="/photos/">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -224,7 +265,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -265,6 +306,8 @@ MathJax.Hub.Queue(function() {
       
     
       
+      
+      
     
       
       
@@ -276,13 +319,15 @@ MathJax.Hub.Queue(function() {
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -345,6 +390,38 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
