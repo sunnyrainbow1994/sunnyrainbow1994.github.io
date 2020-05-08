@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunnyrainbow1994.github.io/"/>
-  <updated>2020-05-07T06:45:49.092Z</updated>
+  <updated>2020-05-07T08:29:48.621Z</updated>
   <id>https://sunnyrainbow1994.github.io/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>new draft</title>
-    <link href="https://sunnyrainbow1994.github.io/2020/05/07/new-draft/"/>
-    <id>https://sunnyrainbow1994.github.io/2020/05/07/new-draft/</id>
-    <published>2020-05-07T06:45:49.091Z</published>
-    <updated>2020-05-07T06:45:49.092Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
