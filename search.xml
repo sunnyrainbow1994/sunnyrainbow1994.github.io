@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>git的应用</title>
+      <link href="/2020/05/08/git%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+      <url>/2020/05/08/git%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="版本控制工具及搭建环境"><a href="#版本控制工具及搭建环境" class="headerlink" title="版本控制工具及搭建环境"></a>版本控制工具及搭建环境</h3><a id="more"></a><h4 id="git分布式版本控制工具"><a href="#git分布式版本控制工具" class="headerlink" title="git分布式版本控制工具"></a>git分布式版本控制工具</h4><p><strong>如何推送本地自己代码到github？</strong></p><ol><li>电脑本地安装git，github注册一个账号</li><li>生成sshkey，在git-bash输入如下命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ssh-keygen -t rsa -C 1533470585@qq.com (github注册邮箱)</span><br></pre></td></tr></table></figure>回车输入存储文件位置和密码，github密码</li><li>在github中设置sshkey，打开xx_rsa.pub文件复制密码到github中</li><li>配置git用户信息，在git-bash输入如下命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git  config   --global   user.name  sunnyrainbow1994     (github用户名)</span><br><span class="line"> git  config   --global   user.email  1533470585@qq.com  (github注册邮箱)</span><br></pre></td></tr></table></figure></li><li>在github新建一个仓库并初始化仓库</li><li>克隆仓库到本地，git-bash命令：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> 存放仓库位置</span><br><span class="line"> $ git  <span class="built_in">clone</span>  github  git@github.com:sunnyrainbow1994/test.git  (仓库地址)</span><br></pre></td></tr></table></figure></li><li>本地代码文件更新并推送到github仓库，git-bash命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git  add  .   <span class="comment">#添加所有更新的文件</span></span><br><span class="line"> $ git  commit  -m  “add new file,update READMD.MD”   <span class="comment">#提交更新到缓冲区，“”中为更新摘要</span></span><br><span class="line"> $ git  push  origin  master   <span class="comment">#推送到源仓库master分支,到github仓库查看是否推送成功。</span></span><br></pre></td></tr></table></figure></li></ol><p><img src="/.io//git.jpg" alt="alt"></p><p>从别人github下载代码修改再push到自己github:<br>从别人github上Fork到自己github,再下载到本地进行修改后push到自己github,操作如上6、7一样。</p><p><strong>github push代码jenkins自动构建项目：</strong></p><ol><li>jenkins新建项目，选择github项目并输入项目github_url，源码管理选择git并输入项目仓库url和github账号密码认证，构建触发器选择github，输入构建命令。</li><li>github项目设置jenkins的webhook，在项目setting里添加webhook选择just push才触发。</li><li>github push一个commit测试 并查看github上webhook状态，查看jenkins有没有产生build。</li></ol><p><strong>本地搭建tomcat+jenkins+github+ngrok</strong></p><ol><li>本地下载tomcat安装包，解压安装包到指定路径，配置好环境变量，启动startup.bat正常运行，打开网页<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 可以看到tomcat画面。本地安装tomcat，打开startup.bat输出乱码改：conf目录下的logging.properties文件改成：consolehandler.encoding=GBK，改端口conf目录下：server.xml文件把所有8080端口改成9090</li><li>本地下载最新的jenkins war包，放到tomcat的webapps目录下，浏览器进入，即可进入Jenkins初始化，找到hudson.model.UpdateCenter.xml 文件，将url改成<a href="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json</a> ，重启tomcat，刷新页面，输入密码，安装插件</li><li>在官网下载ngrok安装包并解压，在官网auth获取token，打开ngrok.exe，输入命令ngrok token xxxxx(你的token)，输入命令：ngrok  http  8080，会有网址<a href="http://61256c23.ngrok.io" target="_blank" rel="noopener">http://61256c23.ngrok.io</a> 映射到本地<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> ，或者ngrok http  192.168.136.131:8080映射到虚拟机上的ip。</li><li>在github项目添加webhook：<a href="http://61256c23.ngrok.io/jenkins/github-webhook/" target="_blank" rel="noopener">http://61256c23.ngrok.io/jenkins/github-webhook/</a> ,具体操作可查看上文。</li></ol><p>jenkins中的远程构建触发：输入认证token，例如123456，浏览器输入网址进行请求：<a href="http://localhost:8080/jenkins/job/github_test/build?token=123456" target="_blank" rel="noopener">http://localhost:8080/jenkins/job/github_test/build?token=123456</a>  ，查看jenkins有没有触发构建。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 版本控制工具、git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2020/04/08/hello-world/"/>
       <url>/2020/04/08/hello-world/</url>
